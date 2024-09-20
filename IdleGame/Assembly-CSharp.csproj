@@ -45,7 +45,6 @@
     <Analyzer Include="D:\Program Files\Unity\2022.3.26f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Src\Game\PlayerPositionSync\Tools.cs" />
     <Compile Include="Assets\Src\Framework\Network\Proto\MessageBase\MessageConvert.cs" />
     <Compile Include="Assets\Src\Framework\Network\Connect\NetworkCounter.cs" />
     <Compile Include="Assets\Src\Framework\Network\Connect\INetworkCallback.cs" />
@@ -62,7 +61,6 @@
     <Compile Include="Assets\Src\Game\IdleGame.cs" />
     <Compile Include="Assets\Src\Framework\Timer\TimeComponent.cs" />
     <Compile Include="Assets\Src\Framework\Network\Protos\Any.cs" />
-    <Compile Include="Assets\Src\Game\PlayerPositionSync\Player.cs" />
     <Compile Include="Assets\Src\Framework\Debug\DebugHelper.cs" />
     <Compile Include="Assets\Src\Framework\Base\FrameWorkArgBase.cs" />
     <Compile Include="Assets\Src\Framework\UI\Runtime\UIComponent.cs" />
@@ -90,7 +88,6 @@
     <Compile Include="Assets\Src\Framework\UI\Runtime\Interface\ICustomLoopComponent.cs" />
     <Compile Include="Assets\Src\Game\Scene\SceneAnchor.cs" />
     <Compile Include="Assets\Src\Framework\DeviceInfo.cs" />
-    <Compile Include="Assets\Src\Game\PlayerPositionSync\EstimateBodyHeight.cs" />
     <Compile Include="Assets\Src\Framework\UI\Runtime\Component\CustomLoopView.cs" />
     <Compile Include="Assets\Src\Framework\Pool\ClassPool.cs" />
     <Compile Include="Assets\Src\Framework\Scene\SceneComponent.cs" />
@@ -107,6 +104,7 @@
     <Compile Include="Assets\Src\Framework\Network\Connect\Tcp\Client\TcpClient.cs" />
     <Compile Include="Assets\Src\Framework\UI\Runtime\Interface\IUIComponentBase.cs" />
     <Compile Include="Assets\Src\Game\Status\GameMenuStatus.cs" />
+    <Compile Include="Assets\Src\Game\UI\UITestNode.cs" />
     <Compile Include="Assets\Src\Framework\Network\Connect\WebSocket\WebSocketTcpConnect.cs" />
     <Compile Include="Assets\Src\Framework\Network\NetworkComponent.cs" />
     <Compile Include="Assets\Src\Framework\Network\Proto\MessageBase\IMessageProcessor.cs" />
@@ -126,9 +124,7 @@
     <Compile Include="Assets\Src\Framework\Network\Connect\NetworkException.cs" />
     <Compile Include="Assets\Src\Game\Status\GameStatusEnum.cs" />
     <Compile Include="Assets\Src\Framework\IGame\IGame.cs" />
-    <Compile Include="Assets\Src\Game\PlayerPositionSync\SyncUserBodyManager.cs" />
     <Compile Include="Assets\Src\Framework\Network\Connect\WebSocket\WebSocketTcpClient.cs" />
-    <Compile Include="Assets\Src\Framework\Network\Proto\LogProcessor.cs" />
     <Compile Include="Assets\Src\Framework\Event\EventControler.cs" />
     <Compile Include="Assets\Src\Game\GameEntry.cs" />
     <Compile Include="Assets\Src\Framework\IGame\Game.cs" />
@@ -140,10 +136,8 @@
     <Compile Include="Assets\Src\Framework\Util\Util.Assembly.cs" />
     <Compile Include="Assets\Src\Framework\Network\Proto\MessageBase\ProcessorAttribute.cs" />
     <Compile Include="Assets\Src\Framework\Thread\ThreadActionWorker.cs" />
-    <Compile Include="Assets\Src\Game\PlayerPositionSync\UserBodyPool.cs" />
     <Compile Include="Assets\Src\Framework\FrameWorkConfig.cs" />
     <Compile Include="Assets\Src\Game\Status\GamePlayStatus.cs" />
-    <Compile Include="Assets\Src\Game\PlayerPositionSync\UserBody.cs" />
     <Compile Include="Assets\Src\UI\UIMainMenuPanel_Partial.cs" />
     <Compile Include="Assets\Src\Framework\Components\CoroutineWorkerComponent.cs" />
     <Compile Include="Assets\Src\Framework\Containers\LinkList_LowGC.cs" />
@@ -152,12 +146,10 @@
     <Compile Include="Assets\Src\Framework\Network\GameNetworkConnectArg.cs" />
     <Compile Include="Assets\Src\Framework\Network\ProtoExtention.cs" />
     <Compile Include="Assets\Src\Framework\Network\Connect\DataSegment.cs" />
-    <Compile Include="Assets\Src\Game\PlayerPositionSync\UserBodyAnimation.cs" />
     <Compile Include="Assets\Src\Framework\UI\Runtime\Interface\ICustomLoopNode.cs" />
     <Compile Include="Assets\Src\Game\UI\UIMainMenuPanel.cs" />
     <Compile Include="Assets\Src\Framework\FSM\IState.cs" />
     <Compile Include="Assets\Src\Framework\UI\Runtime\Base\PressComponentBase.cs" />
-    <None Include="Assets\Src\Game\PlayerPositionSync\Shader\OutlineGlowURP.shader" />
     <Reference Include="UnityEngine">
       <HintPath>D:\Program Files\Unity\2022.3.26f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

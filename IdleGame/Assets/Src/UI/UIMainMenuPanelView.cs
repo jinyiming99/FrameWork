@@ -18,6 +18,90 @@ namespace Game.UI
                  return _UIMainMenuPanel_RectTransform;
              }
        }
+        protected Image _TextList_Image = null;
+        public Image TextList_Image
+        {
+             get
+             {
+                 if (_TextList_Image == null)
+                 {
+                     _TextList_Image = transform.Find("TextList").gameObject.GetComponent<Image>();
+                 }
+                 return _TextList_Image;
+             }
+       }
+        protected RectTransform _TextList_RectTransform = null;
+        public RectTransform TextList_RectTransform
+        {
+             get
+             {
+                 if (_TextList_RectTransform == null)
+                 {
+                     _TextList_RectTransform = transform.Find("TextList").gameObject.GetComponent<RectTransform>();
+                 }
+                 return _TextList_RectTransform;
+             }
+       }
+        protected CustomLoopView _TextList_CustomLoopView = null;
+        public CustomLoopView TextList_CustomLoopView
+        {
+             get
+             {
+                 if (_TextList_CustomLoopView == null)
+                 {
+                     _TextList_CustomLoopView = transform.Find("TextList").gameObject.GetComponent<CustomLoopView>();
+                 }
+                 return _TextList_CustomLoopView;
+             }
+       }
+        protected Image _Viewport_Image = null;
+        public Image Viewport_Image
+        {
+             get
+             {
+                 if (_Viewport_Image == null)
+                 {
+                     _Viewport_Image = transform.Find("TextList/Viewport").gameObject.GetComponent<Image>();
+                 }
+                 return _Viewport_Image;
+             }
+       }
+        protected RectTransform _Viewport_RectTransform = null;
+        public RectTransform Viewport_RectTransform
+        {
+             get
+             {
+                 if (_Viewport_RectTransform == null)
+                 {
+                     _Viewport_RectTransform = transform.Find("TextList/Viewport").gameObject.GetComponent<RectTransform>();
+                 }
+                 return _Viewport_RectTransform;
+             }
+       }
+        protected RectTransform _Content_RectTransform = null;
+        public RectTransform Content_RectTransform
+        {
+             get
+             {
+                 if (_Content_RectTransform == null)
+                 {
+                     _Content_RectTransform = transform.Find("TextList/Viewport/Content").gameObject.GetComponent<RectTransform>();
+                 }
+                 return _Content_RectTransform;
+             }
+       }
+        protected RectTransform _Node_RectTransform = null;
+        public RectTransform Node_RectTransform
+        {
+             get
+             {
+                 if (_Node_RectTransform == null)
+                 {
+                     _Node_RectTransform = transform.Find("TextList/Viewport/Content/Node").gameObject.GetComponent<RectTransform>();
+                 }
+                 return _Node_RectTransform;
+             }
+       }
         protected Image _StartBtn_Image = null;
         public Image StartBtn_Image
         {
@@ -54,18 +138,6 @@ namespace Game.UI
                  return _StartBtn_CustomButton;
              }
        }
-        protected Button _LoadBtn_Button = null;
-        public Button LoadBtn_Button
-        {
-             get
-             {
-                 if (_LoadBtn_Button == null)
-                 {
-                     _LoadBtn_Button = transform.Find("LoadBtn").gameObject.GetComponent<Button>();
-                 }
-                 return _LoadBtn_Button;
-             }
-       }
         protected Image _LoadBtn_Image = null;
         public Image LoadBtn_Image
         {
@@ -88,6 +160,18 @@ namespace Game.UI
                      _LoadBtn_RectTransform = transform.Find("LoadBtn").gameObject.GetComponent<RectTransform>();
                  }
                  return _LoadBtn_RectTransform;
+             }
+       }
+        protected CustomButton _LoadBtn_CustomButton = null;
+        public CustomButton LoadBtn_CustomButton
+        {
+             get
+             {
+                 if (_LoadBtn_CustomButton == null)
+                 {
+                     _LoadBtn_CustomButton = transform.Find("LoadBtn").gameObject.GetComponent<CustomButton>();
+                 }
+                 return _LoadBtn_CustomButton;
              }
        }
         protected Button _OptionBtn_Button = null;
@@ -160,6 +244,18 @@ namespace Game.UI
                      _ExitBtn_RectTransform = transform.Find("ExitBtn").gameObject.GetComponent<RectTransform>();
                  }
                  return _ExitBtn_RectTransform;
+             }
+       }
+        protected RectTransform _GameObject_RectTransform = null;
+        public RectTransform GameObject_RectTransform
+        {
+             get
+             {
+                 if (_GameObject_RectTransform == null)
+                 {
+                     _GameObject_RectTransform = transform.Find("GameObject").gameObject.GetComponent<RectTransform>();
+                 }
+                 return _GameObject_RectTransform;
              }
        }
     }

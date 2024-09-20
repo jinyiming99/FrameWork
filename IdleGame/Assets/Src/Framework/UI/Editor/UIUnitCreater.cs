@@ -7,24 +7,8 @@ using UnityEngine.UI;
 
 namespace GameFrameWork.UI.Editor
 {
-    public  static class UIUnitCreater
+    public static class UIUnitCreater
     {
-        private static Type[] _uiTypes = new Type[]
-        {
-            typeof(Button),
-            typeof(Image),
-            typeof(RectTransform),
-            typeof(Text),
-            typeof(InputField),
-            typeof(Toggle),
-            typeof(Slider),
-            typeof(Scrollbar),
-            typeof(RawImage),
-            typeof(TMPro.TextMeshPro),
-            typeof(CustomButton),
-            typeof(CustomToggle),
-            typeof(CustomToggleGroup),
-        };
         [MenuItem("GameObject/UITools/Create UI Unit")]
         public static void CreateUIUnit()
         {
@@ -45,11 +29,15 @@ namespace GameFrameWork.UI.Editor
             if (!File.Exists(path))
             {
                 CreatePath(path);
+                Debug.Log($"Create path {fullPath}");
             }
 
             List<Component> list = new List<Component>();
             if (File.Exists(fullPath))
+            {
                 File.Delete(fullPath);
+                Debug.Log($"delete file {fullPath}");
+            }
             using (FileStream fs = new FileStream(fullPath, FileMode.OpenOrCreate,FileAccess.Write))
             {
                 using (StreamWriter sw = new StreamWriter(fs))
@@ -67,9 +55,9 @@ namespace GameFrameWork.UI.Editor
 
                     foreach (var transform in transforms)
                     {
-                        if (transform.name.Contains("ignore"))
+                        if (transform.name.Contains(UIEditorConfigDefine.IgnoreName))
                             continue;
-                        foreach (var type in _uiTypes)
+                        foreach (var type in UIEditorConfigDefine._uiTypes)
                         {
                             var t =transform.gameObject.GetComponent(type);
                             if (t is not null)
