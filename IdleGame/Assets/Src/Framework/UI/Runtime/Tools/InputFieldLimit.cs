@@ -4,6 +4,7 @@ using UnityEngine.UI;
  /// unity inputfield的输入文字数量上限
  /// </summary>
 [RequireComponent(typeof(InputField))]
+[AddComponentMenu("UI/Custom/Tools/InputFieldLimit", 100)]
 public class InputFieldLimit : MonoBehaviour
 {
     public int maxLength = 10; // 设置最大长度

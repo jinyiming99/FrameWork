@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace GameFrameWork.UI
 {
+    [AddComponentMenu("UI/Custom/Component/CustomToggle", 100)]
     public class CustomToggle  : PressComponentBase ,ICustomLoopComponent
     {
         public CustomToggleGroup Group;

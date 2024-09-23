@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 namespace GameFrameWork.UI
 {
-    [AddComponentMenu("UI/Custom/CustomLoopView", 100)]
+    [AddComponentMenu("UI/Custom/Component/CustomLoopView", 100)]
     [System.Serializable]
     [RequireComponent(typeof(ScrollRect))]
     public class CustomLoopView : DropComponentBase

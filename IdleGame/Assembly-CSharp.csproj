@@ -80,6 +80,7 @@
     <Compile Include="Assets\Src\Framework\Timer\TimeTaskManager.cs" />
     <Compile Include="Assets\Src\Game\Data\GameData.cs" />
     <Compile Include="Assets\Src\Framework\Timer\TimeCounter.cs" />
+    <Compile Include="Assets\Src\Framework\UI\Runtime\Tools\EmptyRaycast.cs" />
     <Compile Include="Assets\Src\Framework\Network\Connect\Interface\INetworkWorker.cs" />
     <Compile Include="Assets\Src\Framework\UI\Runtime\Base\UIToggleSwitchComponent.cs" />
     <Compile Include="Assets\Src\Framework\Network\Proto\MessageBase\IMessageCreater.cs" />
@@ -148,6 +149,7 @@
     <Compile Include="Assets\Src\Framework\Network\Connect\DataSegment.cs" />
     <Compile Include="Assets\Src\Framework\UI\Runtime\Interface\ICustomLoopNode.cs" />
     <Compile Include="Assets\Src\Game\UI\UIMainMenuPanel.cs" />
+    <Compile Include="Assets\Src\Framework\UI\Runtime\Tools\InputFieldLimit.cs" />
     <Compile Include="Assets\Src\Framework\FSM\IState.cs" />
     <Compile Include="Assets\Src\Framework\UI\Runtime\Base\PressComponentBase.cs" />
     <Reference Include="UnityEngine">

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace GameFrameWork.UI
 {
-    [AddComponentMenu("UI/Custom/CustomButton", 1200)]
+    [AddComponentMenu("UI/Custom/Component/CustomButton", 1200)]
     [System.Serializable]
     public class CustomButton : PressComponentBase
     {

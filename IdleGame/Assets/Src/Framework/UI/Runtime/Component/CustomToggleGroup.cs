@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace GameFrameWork.UI
 {
+    [AddComponentMenu("UI/Custom/Component/CustomToggleGroup", 100)]
     public sealed class CustomToggleGroup : MonoBehaviour
     {
         private List<CustomToggle> _toggles = new List<CustomToggle>();
