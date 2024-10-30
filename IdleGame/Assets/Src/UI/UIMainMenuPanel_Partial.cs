@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace Game.UI
 {
-    public partial class UIMainMenuPanel : UIBase<UIMainMenuPanelView>
+    public partial class UIMainMenuPanel : UIPanelBase<UIMainMenuPanelView>
     {
         protected override string UIViewName => "UIMainMenuPanel";
     }

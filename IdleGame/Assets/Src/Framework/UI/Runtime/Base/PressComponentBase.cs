@@ -1,5 +1,6 @@
 ﻿using System;
 using NaughtyAttributes;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -56,6 +57,8 @@ namespace GameFrameWork.UI
             _isPointerEnter = false;
             if (!_isPressing)
                 SetState(IsSelected?UIComponentStates.selected:UIComponentStates.normal,eventData);
+            if (EventSystem.current != null && EventSystem.current.currentSelectedGameObject == gameObject)
+                EventSystem.current.SetSelectedGameObject(null);
         }
 
         public virtual void OnPointerMove(PointerEventData eventData)
@@ -74,6 +77,8 @@ namespace GameFrameWork.UI
         {
             _isPressing = true;
             SetState(IsSelected?UIComponentStates.selected:UIComponentStates.press);
+            if (EventSystem.current != null && EventSystem.current.currentSelectedGameObject .IsUnityNull())
+                EventSystem.current.SetSelectedGameObject(this.gameObject,eventData);
         }
 
         public virtual void OnPointerUp(PointerEventData eventData)

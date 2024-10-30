@@ -18,8 +18,8 @@ namespace GameFrameWork.UI
         private Transform _layer5;
         
 
-        private Dictionary<Type, IUIBase> _dictionary = new Dictionary<Type, IUIBase>();
-        private LinkList_LowGC<IUIBase> _list = new LinkList_LowGC<IUIBase>();
+        private Dictionary<Type, IUIPanelBase> _dictionary = new Dictionary<Type, IUIPanelBase>();
+        private LinkList_LowGC<IUIPanelBase> _list = new LinkList_LowGC<IUIPanelBase>();
         private void Awake()
         {
             uiRoot = GameObject.Find("Canvas");
@@ -30,7 +30,7 @@ namespace GameFrameWork.UI
             _layer5 = uiRoot.transform.Find("Layer5");
         }
 
-        public T ShowUI<T>(params object[] args) where T : GameEntity,IUIBase
+        public T ShowUI<T>(params object[] args) where T : GameEntity,IUIPanelBase
         {
             var type = typeof(T);
             if (!_dictionary.TryGetValue(type, out var ui))
@@ -49,15 +49,15 @@ namespace GameFrameWork.UI
             return ui as T;
         }
 
-        public void HideUI<T>(IUIBase uiBase) where T : GameEntity, IUIBase
+        public void HideUI<T>(IUIPanelBase iuiPanelBase) where T : GameEntity, IUIPanelBase
         {
-            uiBase.Hide();
-            PushUI(uiBase);
+            iuiPanelBase.Hide();
+            PushUI(iuiPanelBase);
         }
 
-        public void ReleaseUI<T>(IUIBase uiBase) where T : GameEntity, IUIBase
+        public void ReleaseUI<T>(IUIPanelBase iuiPanelBase) where T : GameEntity, IUIPanelBase
         {
-            uiBase.Release();
+            iuiPanelBase.Release();
             var type = typeof(T);
             if (_dictionary.ContainsKey(type))
             {
@@ -81,10 +81,10 @@ namespace GameFrameWork.UI
             return null;
         }
 
-        private void PushUI(IUIBase ui)
+        private void PushUI(IUIPanelBase iuiPanel)
         {
-            _list.Remove(ui);
-            _list.AddLast(ui);
+            _list.Remove(iuiPanel);
+            _list.AddLast(iuiPanel);
         }
     }
 }

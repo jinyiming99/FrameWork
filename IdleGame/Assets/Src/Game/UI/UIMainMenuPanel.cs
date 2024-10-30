@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Game.UI
 {
-    public partial class UIMainMenuPanel : UIBase<UIMainMenuPanelView>
+    public partial class UIMainMenuPanel : UIPanelBase<UIMainMenuPanelView>
     {
         public override int GetLayerID => 2;
         

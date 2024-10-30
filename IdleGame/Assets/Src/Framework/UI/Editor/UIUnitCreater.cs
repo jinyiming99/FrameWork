@@ -136,7 +136,7 @@ namespace GameFrameWork.UI.Editor
                     sw.WriteLine();
                     sw.WriteLine("namespace Game.UI");
                     sw.WriteLine("{");
-                    sw.WriteLine($"    public partial class {className} : UIBase<{className}View>");
+                    sw.WriteLine($"    public partial class {className} : UIPanelBase<{className}View>");
                     sw.WriteLine("    {");
                     sw.WriteLine($"        protected override string UIViewName => \"{obj.name}\";");
                     // sw.WriteLine("         protected override void Awake()");

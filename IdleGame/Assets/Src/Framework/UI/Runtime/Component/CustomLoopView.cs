@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using GameFrameWork.Pool;
+using GameFrameWork.UI.Enum;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Profiling;
@@ -12,14 +13,12 @@ namespace GameFrameWork.UI
     [AddComponentMenu("UI/Custom/Component/CustomLoopView", 100)]
     [System.Serializable]
     [RequireComponent(typeof(ScrollRect))]
-    public class CustomLoopView : DropComponentBase
+    public class CustomLoopView : DropComponentBase ,IAutoCreateComponentInterface
     {
         private class ComponentData
         {
             public GameObject gameObject;
-            public PressComponentBase _PressComponentBase;
             public CustomToggle _CustomToggle;
-            public CustomButton _CustomButton;
             public ICustomLoopComponent _CustomLoopComponent;
         }
         private class NodeData
@@ -45,7 +44,7 @@ namespace GameFrameWork.UI
                 IsUsed = true;
                 Item = item;
                 if (Item._CustomToggle != null)
-                    Item._CustomToggle.IsOn = IsOn;
+                    Item._CustomToggle.InitIsOn = IsOn;
                 Item._CustomLoopComponent?.SetIndex(Index);
                 action?.Invoke(Item.gameObject);
             }
@@ -109,12 +108,6 @@ namespace GameFrameWork.UI
             _content.anchorMin = new Vector2(0,1);
             _content.anchorMax = new Vector2(0,1);
             _content.pivot = new Vector2(0,1);
-            var toggle = _item.GetComponent<CustomToggle>();
-            if (toggle != null)
-            {
-                var dropComponentBase = _item.AddComponent<DropComponentBase>();
-                toggle.SetDropComponent(dropComponentBase);
-            }
         }
         
 
@@ -173,9 +166,7 @@ namespace GameFrameWork.UI
             if (go.gameObject == null)
             {
                 go.gameObject = GameObject.Instantiate(_item);
-                go._PressComponentBase = go.gameObject.GetComponent<PressComponentBase>();
                 go._CustomToggle = go.gameObject.GetComponent<CustomToggle>();
-                go._CustomButton = go.gameObject.GetComponent<CustomButton>();
                 go._CustomLoopComponent = go.gameObject.GetComponent<ICustomLoopComponent>();
                 go.gameObject.transform.SetParent(_content);
             }
@@ -248,6 +239,11 @@ namespace GameFrameWork.UI
             base.OnDrag(eventData);
             var pos = GetPointerDragVector2(eventData.position);
             Refresh();
+        }
+
+        public CustomComponentEnum ComponentType
+        {
+            get => CustomComponentEnum.LoopView;
         }
     }
 }

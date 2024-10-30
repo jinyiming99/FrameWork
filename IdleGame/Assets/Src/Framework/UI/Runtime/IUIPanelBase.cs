@@ -1,6 +1,6 @@
 ﻿namespace GameFrameWork.UI
 {
-    public interface IUIBase
+    public interface IUIPanelBase
     {
         int GetLayerID { get; } 
         void Show(params object[] args);

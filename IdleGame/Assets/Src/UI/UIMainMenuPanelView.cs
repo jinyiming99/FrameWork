@@ -54,40 +54,52 @@ namespace Game.UI
                  return _TextList_CustomLoopView;
              }
        }
-        protected Image _Viewport_Image = null;
-        public Image Viewport_Image
+        protected Image _Viewport1_Image = null;
+        public Image Viewport1_Image
         {
              get
              {
-                 if (_Viewport_Image == null)
+                 if (_Viewport1_Image == null)
                  {
-                     _Viewport_Image = transform.Find("TextList/Viewport").gameObject.GetComponent<Image>();
+                     _Viewport1_Image = transform.Find("TextList/Viewport1").gameObject.GetComponent<Image>();
                  }
-                 return _Viewport_Image;
+                 return _Viewport1_Image;
              }
        }
-        protected RectTransform _Viewport_RectTransform = null;
-        public RectTransform Viewport_RectTransform
+        protected RectTransform _Viewport1_RectTransform = null;
+        public RectTransform Viewport1_RectTransform
         {
              get
              {
-                 if (_Viewport_RectTransform == null)
+                 if (_Viewport1_RectTransform == null)
                  {
-                     _Viewport_RectTransform = transform.Find("TextList/Viewport").gameObject.GetComponent<RectTransform>();
+                     _Viewport1_RectTransform = transform.Find("TextList/Viewport1").gameObject.GetComponent<RectTransform>();
                  }
-                 return _Viewport_RectTransform;
+                 return _Viewport1_RectTransform;
              }
        }
-        protected RectTransform _Content_RectTransform = null;
-        public RectTransform Content_RectTransform
+        protected RectTransform _Content1_RectTransform = null;
+        public RectTransform Content1_RectTransform
         {
              get
              {
-                 if (_Content_RectTransform == null)
+                 if (_Content1_RectTransform == null)
                  {
-                     _Content_RectTransform = transform.Find("TextList/Viewport/Content").gameObject.GetComponent<RectTransform>();
+                     _Content1_RectTransform = transform.Find("TextList/Viewport1/Content1").gameObject.GetComponent<RectTransform>();
                  }
-                 return _Content_RectTransform;
+                 return _Content1_RectTransform;
+             }
+       }
+        protected CustomToggleGroup _Content1_CustomToggleGroup = null;
+        public CustomToggleGroup Content1_CustomToggleGroup
+        {
+             get
+             {
+                 if (_Content1_CustomToggleGroup == null)
+                 {
+                     _Content1_CustomToggleGroup = transform.Find("TextList/Viewport1/Content1").gameObject.GetComponent<CustomToggleGroup>();
+                 }
+                 return _Content1_CustomToggleGroup;
              }
        }
         protected RectTransform _Node_RectTransform = null;
@@ -97,9 +109,57 @@ namespace Game.UI
              {
                  if (_Node_RectTransform == null)
                  {
-                     _Node_RectTransform = transform.Find("TextList/Viewport/Content/Node").gameObject.GetComponent<RectTransform>();
+                     _Node_RectTransform = transform.Find("TextList/Viewport1/Content1/Node").gameObject.GetComponent<RectTransform>();
                  }
                  return _Node_RectTransform;
+             }
+       }
+        protected RectTransform _GameObject1_RectTransform = null;
+        public RectTransform GameObject1_RectTransform
+        {
+             get
+             {
+                 if (_GameObject1_RectTransform == null)
+                 {
+                     _GameObject1_RectTransform = transform.Find("TextList/Viewport1/Content1/Node/GameObject1").gameObject.GetComponent<RectTransform>();
+                 }
+                 return _GameObject1_RectTransform;
+             }
+       }
+        protected CustomButton _GameObject1_CustomButton = null;
+        public CustomButton GameObject1_CustomButton
+        {
+             get
+             {
+                 if (_GameObject1_CustomButton == null)
+                 {
+                     _GameObject1_CustomButton = transform.Find("TextList/Viewport1/Content1/Node/GameObject1").gameObject.GetComponent<CustomButton>();
+                 }
+                 return _GameObject1_CustomButton;
+             }
+       }
+        protected Image _Image_Image = null;
+        public Image Image_Image
+        {
+             get
+             {
+                 if (_Image_Image == null)
+                 {
+                     _Image_Image = transform.Find("TextList/Viewport1/Content1/Node/GameObject1/Image").gameObject.GetComponent<Image>();
+                 }
+                 return _Image_Image;
+             }
+       }
+        protected RectTransform _Image_RectTransform = null;
+        public RectTransform Image_RectTransform
+        {
+             get
+             {
+                 if (_Image_RectTransform == null)
+                 {
+                     _Image_RectTransform = transform.Find("TextList/Viewport1/Content1/Node/GameObject1/Image").gameObject.GetComponent<RectTransform>();
+                 }
+                 return _Image_RectTransform;
              }
        }
         protected Image _StartBtn_Image = null;
@@ -246,16 +306,40 @@ namespace Game.UI
                  return _ExitBtn_RectTransform;
              }
        }
-        protected RectTransform _GameObject_RectTransform = null;
-        public RectTransform GameObject_RectTransform
+        protected Image _Viewport_Image = null;
+        public Image Viewport_Image
         {
              get
              {
-                 if (_GameObject_RectTransform == null)
+                 if (_Viewport_Image == null)
                  {
-                     _GameObject_RectTransform = transform.Find("GameObject").gameObject.GetComponent<RectTransform>();
+                     _Viewport_Image = transform.Find("Scroll View/Viewport").gameObject.GetComponent<Image>();
                  }
-                 return _GameObject_RectTransform;
+                 return _Viewport_Image;
+             }
+       }
+        protected RectTransform _Viewport_RectTransform = null;
+        public RectTransform Viewport_RectTransform
+        {
+             get
+             {
+                 if (_Viewport_RectTransform == null)
+                 {
+                     _Viewport_RectTransform = transform.Find("Scroll View/Viewport").gameObject.GetComponent<RectTransform>();
+                 }
+                 return _Viewport_RectTransform;
+             }
+       }
+        protected RectTransform _Content_RectTransform = null;
+        public RectTransform Content_RectTransform
+        {
+             get
+             {
+                 if (_Content_RectTransform == null)
+                 {
+                     _Content_RectTransform = transform.Find("Scroll View/Viewport/Content").gameObject.GetComponent<RectTransform>();
+                 }
+                 return _Content_RectTransform;
              }
        }
     }

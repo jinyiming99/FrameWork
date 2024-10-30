@@ -1,4 +1,5 @@
-﻿using GameFrameWork.UI;
+﻿using System;
+using GameFrameWork.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,7 @@ namespace Game.UI
         private Text _content;
         [SerializeField]
         private Text _age;
+        
         public void SetData(string data)
         {
             _name.text = data;

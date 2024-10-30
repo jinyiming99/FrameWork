@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace GameFrameWork.UI
 {
-    public class UIBase<T> : GameEntity,IUIBase where T : MonoBehaviour 
+    public class UIPanelBase<T> : GameEntity,IUIPanelBase where T : MonoBehaviour 
     {
         protected T _view;
         public T View => _view;

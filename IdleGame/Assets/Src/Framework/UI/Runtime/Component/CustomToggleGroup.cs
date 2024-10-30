@@ -1,28 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using GameFrameWork.UI.Enum;
 using UnityEngine;
 
 namespace GameFrameWork.UI
 {
     [AddComponentMenu("UI/Custom/Component/CustomToggleGroup", 100)]
-    public sealed class CustomToggleGroup : MonoBehaviour
+    public sealed class CustomToggleGroup : MonoBehaviour ,IAutoCreateComponentInterface
     {
+        private enum ToggleType
+        {
+            Toggle,
+            Select,
+        }
         private List<CustomToggle> _toggles = new List<CustomToggle>();
-        [SerializeField]
-        private bool _isMuliSelect = false;
 
+        [SerializeField] private ToggleType _toggleType = ToggleType.Toggle;
         private bool _isNeedUpdate = false;
         public bool IsMuliSelect
         {
-            get { return _isMuliSelect; }   
-            set { _isMuliSelect = value; }
+            get { return _toggleType == ToggleType.Select; }   
         }
         
         internal void RegisterToggle(CustomToggle toggle)
         {
             if (toggle == null)
                 return;
+            
             if (!_toggles.Contains(toggle))
             {
                 _toggles.Add(toggle);
@@ -42,7 +47,7 @@ namespace GameFrameWork.UI
         
         internal void SetToggle(CustomToggle toggle)
         {
-            if (_isMuliSelect) return;
+
             if (_toggles == null) return;
             foreach (var t in _toggles)
             {
@@ -75,7 +80,7 @@ namespace GameFrameWork.UI
 
         private void CheckToggle()
         {
-            if (_isMuliSelect || _toggles.Count == 0) return;
+            if (_toggles.Count == 0) return;
             var toggle = ActiveToggles();
             if (toggle == null)
             {
@@ -102,9 +107,9 @@ namespace GameFrameWork.UI
                 if (_toggles[i].IsOn)
                     return _toggles[i];
             }
-
             return null;
         }
-        
+
+        public CustomComponentEnum ComponentType { get => CustomComponentEnum.ToggleGroup; }
     }
 }

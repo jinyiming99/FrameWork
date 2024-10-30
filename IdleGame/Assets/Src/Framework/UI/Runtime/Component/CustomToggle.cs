@@ -1,4 +1,5 @@
 ﻿using System;
+using GameFrameWork.UI.Enum;
 using NaughtyAttributes;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -6,13 +7,11 @@ using UnityEngine;
 namespace GameFrameWork.UI
 {
     [AddComponentMenu("UI/Custom/Component/CustomToggle", 100)]
-    public class CustomToggle  : PressComponentBase ,ICustomLoopComponent
+    public class CustomToggle  : PressComponentBase ,ICustomLoopComponent , IAutoCreateComponentInterface
     {
         public CustomToggleGroup Group;
         [SerializeField]
         protected bool _isOn = false;
-        [SerializeField]
-        private DropComponentBase _dropComponent;
         
         ICustomComponentStateChange _stateChange;
         
@@ -39,15 +38,16 @@ namespace GameFrameWork.UI
                 }
             }
         }
-        
-        public void SetDropComponent(DropComponentBase drop)
+
+        public bool InitIsOn
         {
-            _dropComponent = drop;
+            set => _isOn = value;
         }
+        
 
         private void SetValue(bool isOn)
         {
-
+            _isOn = isOn;
         }
         
         
@@ -115,8 +115,6 @@ namespace GameFrameWork.UI
             {
                 if (IsOn)
                     return;
-                if (_dropComponent != null && _dropComponent.IsDroging)
-                    return;
                 IsOn = true;
             }
         }
@@ -131,5 +129,7 @@ namespace GameFrameWork.UI
         {
             _index = index;
         }
+
+        public CustomComponentEnum ComponentType { get => CustomComponentEnum.Toggle; }
     }
 }
